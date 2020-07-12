@@ -2,6 +2,17 @@ version: 1
 env:
   variables:
       key: value
+backend:
+  phases:
+    preBuild:
+      commands:
+        - run 
+    build:
+      commands:
+        - *enter command*
+    postBuild:
+        commands:
+        - *enter command*
 frontend:
   phases:
     preBuild:
@@ -11,4 +22,38 @@ frontend:
     build:
       commands:
         - npm run build
+  artifacts:
+    files:
+        - location
+        - location
+    discard-paths: yes
+    baseDirectory: location
+  cache:
+    paths:
+        - path
+        - path
+  customHeaders:
+   - pattern: 'file-pattern'
+     headers:
+     - key: 'custom-header-name'
+       value: 'custom-header-value'
+     - key: 'custom-header-name'
+       value: 'custom-header-value'
+test:
+  phases:
+    preTest:
+      commands:
+        - *enter command*
+    test:
+      commands:
+        - *enter command*
+    postTest:
+      commands:
+        - *enter command*
+  artifacts:
+    files:
+        - location
+        - location
+    configFilePath: *location*
+    baseDirectory: *location*
         
