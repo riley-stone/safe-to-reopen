@@ -10,5 +10,5 @@ frontend:
         - npm ci
     build:
       commands:
-        - npm run reopen schools.html
+        - npm run build
         
